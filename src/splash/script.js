@@ -4,12 +4,10 @@ contextBridge.exposeInMainWorld('c3', {
     close: () => { ipcRenderer.send("exitClient") }
 })
 
-document.addEventListener("DOMContentLoaded", () => {
-    ipcRenderer.on("send", (v) => {
-        console.log(v)
+document.addEventListener("DOMContentLoaded", async () => {
+    ipcRenderer.on("status", (e, v) => {
         document.getElementById("updateStats").innerText = v
     })
-    ipcRenderer.invoke("appVersion", (v) => {
-        document.getElementById("appVersion").innerText = v
-    })
+    let ver = await ipcRenderer.invoke("appVersion")
+    document.getElementById("appVersion").innerText = `v ` + ver
 })
