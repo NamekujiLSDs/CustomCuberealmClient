@@ -1,7 +1,7 @@
 {
   "name": "custom.cuberealm.client",
-  "productName": "Custom Cuberealm Client - C3",
-  "version": "1.0.0",
+  "productName": "Custom Cuberealm Client",
+  "version": "1.0.1",
   "description": "Get unlimited FPS and lots of customization on Cuberealm!",
   "main": "index.js",
   "scripts": {
